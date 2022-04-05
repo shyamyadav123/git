@@ -1,0 +1,6 @@
+FROM ubuntu
+RUN apt-get update
+dockerImage=docker.buildregistry
+docker.withregistry('',registryCredentails){
+dockerImage.push()
+dockerImage.run(-p 8000:8080 --name mycontainer)
